@@ -1,0 +1,203 @@
+/* Custom Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes audio-bar {
+  0%, 100% {
+    height: 20%;
+  }
+  50% {
+    height: 100%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Animation Classes */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-audio-bar {
+  animation: audio-bar 1s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
+
+.animate-scroll {
+  animation: scroll 1.5s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 2px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.5);
+  border-radius: 2px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 85, 247, 0.7);
+}
+
+/* Glass Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(168, 85, 247, 0.2);
+}
+
+/* Card Glow Effect */
+.card-glow {
+  position: relative;
+}
+
+.card-glow::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.card-glow:hover::before {
+  opacity: 1;
+}
+
+/* Audio Visualizer Bar Heights */
+.audio-bar:nth-child(1) { animation-duration: 0.8s; }
+.audio-bar:nth-child(2) { animation-duration: 1.1s; }
+.audio-bar:nth-child(3) { animation-duration: 0.9s; }
+.audio-bar:nth-child(4) { animation-duration: 1.2s; }
+.audio-bar:nth-child(5) { animation-duration: 0.7s; }
+.audio-bar:nth-child(6) { animation-duration: 1.0s; }
+.audio-bar:nth-child(7) { animation-duration: 0.85s; }
+.audio-bar:nth-child(8) { animation-duration: 1.15s; }
+.audio-bar:nth-child(9) { animation-duration: 0.75s; }
+.audio-bar:nth-child(10) { animation-duration: 1.05s; }
+.audio-bar:nth-child(11) { animation-duration: 0.9s; }
+.audio-bar:nth-child(12) { animation-duration: 1.25s; }
+.audio-bar:nth-child(13) { animation-duration: 0.8s; }
+.audio-bar:nth-child(14) { animation-duration: 1.1s; }
+.audio-bar:nth-child(15) { animation-duration: 0.95s; }
+.audio-bar:nth-child(16) { animation-duration: 1.3s; }
+.audio-bar:nth-child(17) { animation-duration: 0.7s; }
+.audio-bar:nth-child(18) { animation-duration: 1.0s; }
+.audio-bar:nth-child(19) { animation-duration: 0.85s; }
+.audio-bar:nth-child(20) { animation-duration: 1.15s; }
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection Color */
+::selection {
+  background: rgba(168, 85, 247, 0.3);
+  color: white;
+}
+
+/* Focus Styles */
+:focus-visible {
+  outline: 2px solid #a855f7;
+  outline-offset: 2px;
+}
+
+/* Button Press Effect */
+button:active {
+  transform: scale(0.98);
+}
+
+/* Image Loading Placeholder */
+img {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.1));
+}
+
+/* Responsive Typography */
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
